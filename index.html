@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detektif Gaya — Petualangan Nusantara, game edukasi IPAS Kelas 4 tentang gaya di lingkungan sekitar dan budaya Nusantara."
+    />
+    <title>Detektif Gaya — Petualangan Nusantara</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-icon">🔎</div>
+          <div>
+            <div class="brand-name">Detektif Gaya</div>
+            <div class="brand-sub">Petualangan Nusantara</div>
+          </div>
+        </div>
+
+        <div class="progress-panel">
+          <div class="progress-label">Petualanganmu: <span id="progressText">0%</span></div>
+          <div class="progress-bar">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="screen active" id="screen-home">
+          <div class="hero-panel">
+            <div class="hero-copy">
+              <p class="eyebrow">IPAS Kelas 4 / Fase B</p>
+              <h1>Detektif Gaya</h1>
+              <p class="tagline">“Cari Gayanya, Kenali Lingkungannya, Hargai Budayanya!”</p>
+
+              <div class="speech-bubble">
+                “Hai, Detektif! Hari ini kita akan mencari berbagai gaya yang ada di sekitar kita!”
+              </div>
+
+              <div class="button-grid">
+                <button class="primary-btn" data-target="screen-map">▶ MULAI PETUALANGAN</button>
+                <button data-target="screen-zone1">📚 MATERI</button>
+                <button data-target="screen-festival">🎮 MINI GAME</button>
+                <button data-target="screen-quiz">🏆 KUIS</button>
+                <button data-target="screen-story">🌏 CERITA DARI DAERAHKU</button>
+                <button data-target="screen-reflection">💭 REFLEKSI</button>
+                <button data-target="screen-guru">👩‍🏫 DASHBOARD GURU</button>
+              </div>
+            </div>
+
+            <div class="character-scene">
+              <div class="sparkle sparkle-1">✦</div>
+              <div class="sparkle sparkle-2">✦</div>
+              <div class="sparkle sparkle-3">✦</div>
+              <div class="character">
+                <div class="character-shadow"></div>
+                <div class="character-body">
+                  <div class="head">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="smile"></div>
+                  </div>
+                  <div class="body-suit"></div>
+                  <div class="arm left"></div>
+                  <div class="arm right"></div>
+                  <div class="leg left"></div>
+                  <div class="leg right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-map">
+          <div class="panel-header">
+            <h2>🗺️ Peta Petualangan Nusantara</h2>
+          </div>
+          <div class="zone-grid" id="zoneGrid"></div>
+        </section>
+
+        <section class="screen" id="screen-zone1">
+          <div class="panel-header">
+            <h2>🌏 GAYA DI SEKITARKU</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Setiap daerah memiliki kegiatan dan permainan yang berbeda. Yuk, cari tahu gaya yang ada di lingkunganmu!”</div>
+            <div class="activity-card">
+              <p class="question">Mana yang pernah kamu lihat atau mainkan?</p>
+              <div class="checkbox-list">
+                <label><input type="checkbox" value="gasing" /> Gasing</label>
+                <label><input type="checkbox" value="layang-layang" /> Layang-layang</label>
+                <label><input type="checkbox" value="kelereng" /> Kelereng</label>
+                <label><input type="checkbox" value="egrang" /> Egrang</label>
+                <label><input type="checkbox" value="tarik tambang" /> Tarik Tambang</label>
+                <label><input type="checkbox" value="gerobak" /> Gerobak</label>
+                <label><input type="checkbox" value="tanah liat" /> Membentuk Tanah Liat</label>
+                <label><input type="checkbox" value="membawa barang" /> Membawa atau Menarik Barang</label>
+                <label><input type="checkbox" value="belum pernah" /> Saya belum pernah melihat atau memainkannya.</label>
+              </div>
+            </div>
+
+            <div class="activity-card">
+              <label class="question" for="localGameName">Apa nama permainan ini di daerahmu?</label>
+              <input id="localGameName" type="text" placeholder="Contoh: Gasing, Layang-layang, atau nama lokal di daerah saya" />
+            </div>
+
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone1">Simpan pengamatan</button>
+              <button class="secondary-btn" data-target="screen-map">Kembali ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone2">
+          <div class="panel-header">
+            <h2>💪 GAYA OTOT</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Pernahkah kamu membantu orang tua membawa barang, mendorong sepeda, menarik gerobak, atau membawa belanjaan?”</div>
+            <div class="activity-card">
+              <p class="question">Aktivitas apa yang pernah kamu lakukan?</p>
+              <div class="checkbox-list compact">
+                <label><input type="checkbox" value="membawa barang" /> Membawa barang</label>
+                <label><input type="checkbox" value="mendorong sepeda" /> Mendorong sepeda</label>
+                <label><input type="checkbox" value="menarik gerobak" /> Menarik gerobak</label>
+                <label><input type="checkbox" value="membawa belanjaan" /> Membawa belanjaan</label>
+                <label><input type="checkbox" value="tarik tambang" /> Bermain tarik tambang</label>
+                <label><input type="checkbox" value="kelereng" /> Bermain kelereng</label>
+              </div>
+            </div>
+            <div class="activity-card reveal-box">
+              <p class="question">Apa jenis gaya yang digunakan?</p>
+              <button class="tip-btn" data-answer="Gaya otot">Lihat jawabanku</button>
+              <div class="answer-box">Jawaban: <strong>GAYA OTOT</strong></div>
+            </div>
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone2">Selesai dan lanjut</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone3">
+          <div class="panel-header">
+            <h2>🌎 GAYA GRAVITASI</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Di lingkungan rumahmu, benda atau buah apa yang pernah kamu lihat jatuh?”</div>
+            <div class="activity-card">
+              <label class="question" for="gravityThing">Di tempat saya, saya pernah melihat</label>
+              <input id="gravityThing" type="text" placeholder="... jatuh" />
+            </div>
+            <div class="activity-card reveal-box">
+              <p class="question">Apa gaya yang menyebabkan benda tersebut jatuh?</p>
+              <button class="tip-btn" data-answer="Gaya gravitasi">Lihat jawaban</button>
+              <div class="answer-box">Jawaban: <strong>GAYA GRAVITASI</strong></div>
+            </div>
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone3">Tandai selesai</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone4">
+          <div class="panel-header">
+            <h2>🛞 GAYA GESEK</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Menurutmu, apakah permukaan yang berbeda dapat membuat gerakan benda berbeda?”</div>
+            <div class="activity-card">
+              <p class="question">Pilih permukaan yang paling membuat benda bergerak lebih jauh.</p>
+              <div class="surface-choice-grid">
+                <button class="surface-btn active" data-surface="keramik">Keramik</button>
+                <button class="surface-btn" data-surface="kain">Kain</button>
+                <button class="surface-btn" data-surface="karpet">Karpet</button>
+                <button class="surface-btn" data-surface="pasir">Pasir</button>
+              </div>
+            </div>
+
+            <div class="experiment-box">
+              <div class="track">
+                <div class="car" id="carThing">🚗</div>
+              </div>
+              <div class="experiment-actions">
+                <button class="primary-btn" id="pushCarBtn">Dorong mobil mainan</button>
+                <div id="experimentResult">Jarak tempuh: 0 cm</div>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone4">Selesai belajar</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone5">
+          <div class="panel-header">
+            <h2>🧲 GAYA MAGNET</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Apakah kamu pernah menemukan magnet di rumah atau sekolah?”</div>
+            <div class="activity-card">
+              <div class="button-grid small-grid">
+                <button class="magnet-option active" data-location="rumah">🏠 Rumah</button>
+                <button class="magnet-option" data-location="sekolah">🏫 Sekolah</button>
+                <button class="magnet-option" data-location="toko">🏪 Toko</button>
+                <button class="magnet-option" data-location="belum">❔ Belum pernah</button>
+              </div>
+            </div>
+
+            <div class="magnet-sim" id="magnetSim">
+              <div class="magnet-bar">🧲</div>
+              <div class="clip clip-1">📎</div>
+              <div class="clip clip-2">📎</div>
+              <div class="clip clip-3">📎</div>
+              <button class="primary-btn" id="magnetTrigger">Coba tarik</button>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone5">Selesai</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone6">
+          <div class="panel-header">
+            <h2>🎮 Zona 6 — Festival Nusantara</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="speech-bubble small">“Pada festival, banyak aktivitas bisa menunjukkan gaya. Temukan benda dan kegiatan yang bekerja dengan gaya yang tepat!”</div>
+            <div class="festival-grid">
+              <div class="festival-area" data-area="permainan">
+                <h3>🏘️ Area Permainan</h3>
+                <p>Gasing, kelereng, egrang.</p>
+                <button class="mini-quest">Cari benda yang menggunakan gaya otot</button>
+              </div>
+              <div class="festival-area" data-area="sehari-hari">
+                <h3>🏡 Area Kegiatan Sehari-hari</h3>
+                <p>Mendorong, menarik, membawa benda.</p>
+                <button class="mini-quest">Temukan aktivitas yang menunjukkan gaya otot</button>
+              </div>
+              <div class="festival-area" data-area="lingkungan">
+                <h3>🌾 Area Lingkungan</h3>
+                <p>Tanah, rumput, pasir, air, jalan.</p>
+                <button class="mini-quest">Amati gaya gesek di berbagai permukaan</button>
+              </div>
+              <div class="festival-area" data-area="karya">
+                <h3>🎨 Area Karya</h3>
+                <p>Tanah liat/plastisin.</p>
+                <button class="mini-quest">Bentuk dan amati perubahan bentuk benda</button>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone6">Tantangan festival selesai</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-zone7">
+          <div class="panel-header">
+            <h2>🏆 Final Boss — Tantangan Akhir</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="boss-panel">
+              <div class="boss-card">
+                <div class="boss-emoji">🦸‍♂️</div>
+                <div>
+                  <h3>Detektif Gaya siap!</h3>
+                  <p>Jawab tantangan akhirnya: apa saja gaya yang kita temukan di lingkungan kita?</p>
+                </div>
+              </div>
+              <div class="checkbox-list compact">
+                <label><input type="checkbox" value="gaya otot" /> Gaya otot</label>
+                <label><input type="checkbox" value="gravitasi" /> Gravitasi</label>
+                <label><input type="checkbox" value="gesek" /> Gesek</label>
+                <label><input type="checkbox" value="magnet" /> Magnet</label>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-btn" data-complete="zone7">Menang! Selesaikan petualangan</button>
+              <button class="secondary-btn" data-target="screen-map">Ke peta</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-story">
+          <div class="panel-header">
+            <h2>🇮🇩 PERMAINAN DARI DAERAHKU</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="story-form">
+              <label>Nama permainan:<br><input type="text" id="storyGame" placeholder="Contoh: Gasing" /></label>
+              <label>Daerah/lingkungan:<br><input type="text" id="storyArea" placeholder="Contoh: Bandung / sekolah / kampung" /></label>
+              <label>Bagaimana cara memainkannya?<br><textarea id="storyHow" rows="4" placeholder="Ceritakan singkat cara memainkan."></textarea></label>
+              <div class="checkbox-list compact">
+                <label><input type="checkbox" value="gaya otot" /> Gaya Otot</label>
+                <label><input type="checkbox" value="gravitasi" /> Gravitasi</label>
+                <label><input type="checkbox" value="gesek" /> Gesek</label>
+                <label><input type="checkbox" value="magnet" /> Magnet</label>
+                <label><input type="checkbox" value="dorongan" /> Dorongan</label>
+                <label><input type="checkbox" value="tarikan" /> Tarikan</label>
+              </div>
+              <div class="action-row">
+                <button class="primary-btn" id="saveStoryBtn">Ceritakan permainanmu</button>
+              </div>
+            </div>
+            <div id="storySaved" class="save-message"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-quiz">
+          <div class="panel-header">
+            <h2>🏆 KUIS DETEKTIF GAYA</h2>
+          </div>
+          <div class="lesson-box quiz-box">
+            <div class="quiz-level active" data-quiz="level1">
+              <h3>Level 1 — Kenali Gaya</h3>
+              <p>Beni sedang bermain kelereng. Ia menyentil kelereng dengan jarinya.</p>
+              <p>Gaya yang digunakan adalah:</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q1" value="A" /> A. Otot</label>
+                <label><input type="radio" name="q1" value="B" /> B. Magnet</label>
+                <label><input type="radio" name="q1" value="C" /> C. Gravitasi</label>
+                <label><input type="radio" name="q1" value="D" /> D. Cahaya</label>
+              </div>
+              <button class="primary-btn check-answer-btn" data-answer="A" data-target="level1">Jawab</button>
+              <div class="quiz-feedback" data-feedback="level1"></div>
+            </div>
+
+            <div class="quiz-level" data-quiz="level2">
+              <h3>Level 2 — Pahami Gaya</h3>
+              <p>Kelereng dimainkan di lantai keramik dan karpet. Kelereng di keramik bergerak lebih jauh.</p>
+              <p>Mengapa?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q2" value="A" /> A. Keramik memiliki gaya gesek lebih kecil</label>
+                <label><input type="radio" name="q2" value="B" /> B. Keramik memiliki gaya magnet lebih besar</label>
+                <label><input type="radio" name="q2" value="C" /> C. Karpet memiliki gravitasi lebih besar</label>
+                <label><input type="radio" name="q2" value="D" /> D. Karpet lebih licin</label>
+              </div>
+              <button class="primary-btn check-answer-btn" data-answer="A" data-target="level2">Jawab</button>
+              <div class="quiz-feedback" data-feedback="level2"></div>
+            </div>
+
+            <div class="quiz-level" data-quiz="level3">
+              <h3>Level 3 — Aplikasi Gaya</h3>
+              <p>Jika kita menempelkan magnet ke pintu lemari, benda apakah yang paling mungkin menempel?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q3" value="A" /> A. Kertas</label>
+                <label><input type="radio" name="q3" value="B" /> B. Klip kertas</label>
+                <label><input type="radio" name="q3" value="C" /> C. Air</label>
+                <label><input type="radio" name="q3" value="D" /> D. Baju</label>
+              </div>
+              <button class="primary-btn check-answer-btn" data-answer="B" data-target="level3">Jawab</button>
+              <div class="quiz-feedback" data-feedback="level3"></div>
+            </div>
+
+            <div class="action-row">
+              <button class="secondary-btn" data-target="screen-home">Kembali ke rumah</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-reflection">
+          <div class="panel-header">
+            <h2>💭 REFLEKSI</h2>
+          </div>
+          <div class="lesson-box">
+            <div class="activity-card">
+              <label class="question" for="reflectionText">Apa pengalaman paling menarik yang kamu pelajari hari ini?</label>
+              <textarea id="reflectionText" rows="5" placeholder="Saya belajar bahwa ..."></textarea>
+            </div>
+            <div class="activity-card">
+              <p class="question">Gaya apa yang paling sering kamu temui di lingkungan sekitarmu?</p>
+              <div class="checkbox-list compact">
+                <label><input type="checkbox" value="gaya otot" /> Gaya Otot</label>
+                <label><input type="checkbox" value="gravitasi" /> Gravitasi</label>
+                <label><input type="checkbox" value="gesek" /> Gesek</label>
+                <label><input type="checkbox" value="magnet" /> Magnet</label>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="primary-btn" id="saveReflectionBtn">Simpan refleksi</button>
+              <button class="secondary-btn" data-target="screen-home">Ke rumah</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="screen-guru">
+          <div class="panel-header">
+            <h2>👩‍🏫 DASHBOARD GURU</h2>
+          </div>
+          <div class="lesson-box guru-box">
+            <div class="stat-grid">
+              <div class="stat-box">
+                <div class="stat-label">Progress siswa</div>
+                <div class="stat-value" id="guruProgress">0%</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Zona selesai</div>
+                <div class="stat-value" id="guruZones">0/7</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Mini game</div>
+                <div class="stat-value" id="guruFestival">Belum</div>
+              </div>
+            </div>
+
+            <div class="teacher-note">
+              <h3>Catatan pembelajaran CRT</h3>
+              <ul>
+                <li>Berangkat dari pengalaman dekat siswa.</li>
+                <li>Menghubungkan budaya dan lingkungan lokal.</li>
+                <li>Memberi ruang siswa untuk berbagi nama lokal permainan.</li>
+                <li>Memfasilitasi dialog dan refleksi.</li>
+              </ul>
+            </div>
+
+            <div class="action-row">
+              <button class="secondary-btn" data-target="screen-home">Kembali ke rumah</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
